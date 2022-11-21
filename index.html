@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tosi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.3.0.min.js"></script>
+    <script src="//cdn.8thwall.com/web/aframe/aframe-extras-6.1.1.min.js"></script>
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script src='//cdn.8thwall.com/web/landing-page/landing-page.js'></script>
+    <script async
+            src="//apps.8thwall.com/xrweb?appKey=mfSmtnclpAsmajRqcnJSlr02yOdIg1Cy3XSBgGLNL9A8t5rfcYbEHhX447E443FrknLLrZ"></script>
+
+    <script src="script/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+</head>
+<body>
+<div id="log" class="zindex">log</div>
+<div id="powered" class="zindex">Powered by Action Ship</div>
+<div id="root">
+    <div class="active">
+        <div class="icon">
+            <img src="assets/images/tosi-logo.svg" alt="tosi-logo">
+        </div>
+        <div class="title">
+            Hi there!
+        </div>
+        <div class="separator-block-start">
+            <div class="separator"></div>
+        </div>
+        <div class="list">
+            <div class="list-title">Complete a few easy steps to get your discount:</div>
+            <ul>
+                <li>Give permission to use your camera</li>
+                <li>Scan labels using hints</li>
+                <li>Get your discount</li>
+            </ul>
+        </div>
+        <div class="button-block zindex">
+            <div class="button">Start Now</div>
+        </div>
+    </div>
+    <div>
+        <div class="ar-item active">
+            <div class="icon-small zindex">
+                <img src="assets/images/tosi-logo.svg" alt="tosi-logo">
+            </div>
+            <div class="bar-image zindex">
+                <img src="assets/images/tosi1.png" alt="tosi1">
+            </div>
+            <div class="scan zindex">Scan this object</div>
+            <div class="button-block zindex">
+                <div class="button">Continue</div>
+            </div>
+        </div>
+        <div class="ar-item">
+            <div class="icon-small zindex">
+                <img src="assets/images/tosi-logo.svg" alt="tosi-logo">
+            </div>
+            <div class="bar-image zindex">
+                <img src="assets/images/tosi2.png" alt="tosi2">
+            </div>
+            <div class="scan zindex">Scan this object</div>
+            <div class="button-block zindex">
+                <div class="button">Redeem coupon</div>
+            </div>
+        </div>
+        <div class="gradient-top"></div>
+        <div class="gradient-bottom"></div>
+    </div>
+    <div>
+        <div class="icon-small zindex">
+            <img src="assets/images/tosi-logo.svg" alt="tosi-logo">
+        </div>
+        <div class="title title-final">
+            Congrats!
+        </div>
+        <div class="separator-block-final">
+            <div class="separator"></div>
+        </div>
+        <div class="main-image">
+            <img src="assets/images/final.gif" alt="final">
+        </div>
+        <div class="text-final">
+            <div class="save">Save 15%</div>
+            <div class="delivery">Order direct delivery</div>
+        </div>
+        <div class="button-block zindex">
+            <div class="button">Go to Site</div>
+        </div>
+    </div>
+</div>
+<div id="scene-root">
+    <a-scene
+            id="scene"
+            tosi
+            xrextras-gesture-detector
+            landing-page
+            xrextras-loading
+            xrextras-runtime-error
+            renderer="colorManagement:true"
+            xrweb="allowedDevices: any">
+
+        <a-assets id="assets">
+            <a-asset-item id="bar1" src="./assets/models/bar1.glb"></a-asset-item>
+            <a-asset-item id="bar2" src="./assets/models/bar2.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera
+                id="camera"
+                position="0 8 8"
+                raycaster="objects: .cantap"
+                cursor="fuse: false; rayOrigin: mouse;">
+        </a-camera>
+
+        <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+        <a-light type="ambient" intensity="1"></a-light>
+
+        <a-plane id="ground" position="0 0 0" rotation="0 0 0" width="50" height="50" material="shader: shadow"
+                 shadow></a-plane>
+    </a-scene>
+</div>
+</body>
+</html>
